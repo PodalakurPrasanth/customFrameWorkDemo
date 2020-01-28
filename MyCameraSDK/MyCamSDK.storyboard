@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mud-GN-dSS">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My CameraVC-->
+        <scene sceneID="bbe-Si-mhL">
+            <objects>
+                <viewController storyboardIdentifier="MyCameraVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mud-GN-dSS" customClass="MyCameraVC" customModule="MyCameraSDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2GT-KN-e83">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw0-aO-CQq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Odl-jN-Elr" appends="YES" id="501-Ay-AzF"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3K-8D-fJ1">
+                                <rect key="frame" x="179.5" y="777" width="55" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="6rd-yC-IlY"/>
+                                    <constraint firstAttribute="width" constant="55" id="7pE-O3-hW8"/>
+                                </constraints>
+                                <state key="normal" image="photo-camera"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="capture:" destination="mud-GN-dSS" eventType="touchUpInside" id="JZA-0T-UYX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W3K-8D-fJ1" firstAttribute="centerX" secondItem="2GT-KN-e83" secondAttribute="centerX" id="1fP-nr-z8k"/>
+                            <constraint firstItem="dSy-Oe-aMT" firstAttribute="bottom" secondItem="W3K-8D-fJ1" secondAttribute="bottom" constant="30" id="EuU-cF-zhx"/>
+                            <constraint firstItem="tw0-aO-CQq" firstAttribute="top" secondItem="2GT-KN-e83" secondAttribute="top" id="S14-dP-pij"/>
+                            <constraint firstItem="tw0-aO-CQq" firstAttribute="leading" secondItem="dSy-Oe-aMT" secondAttribute="leading" id="XVR-ur-Xvn"/>
+                            <constraint firstItem="tw0-aO-CQq" firstAttribute="trailing" secondItem="dSy-Oe-aMT" secondAttribute="trailing" id="dpQ-BQ-X2B"/>
+                            <constraint firstAttribute="bottom" secondItem="tw0-aO-CQq" secondAttribute="bottom" id="qPr-SF-AiG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dSy-Oe-aMT"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="tw0-aO-CQq" id="6br-aV-ogh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVy-6v-fUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Odl-jN-Elr">
+                    <connections>
+                        <action selector="pinchToZoom:" destination="mud-GN-dSS" id="dRm-dX-UUd"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="107.8125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo-camera" width="24" height="24"/>
+    </resources>
+</document>
